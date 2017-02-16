@@ -1,2 +1,2 @@
-# designPattern
+# Self DesignPattern Practice
 Basic design pattern
