@@ -7,15 +7,17 @@ package com.futurefry.designPattern.factory;
  */
 public class SimplePizzaFactory {
 
-    public Pizza createPizaa(String type) {
+    public Pizza createPizza(String type) {
         Pizza pizza = null;
 
         if (type.equals("cheese")) {
             pizza = new CheesePizza();
+
         } else if (type.equals("pepporoni")) {
             pizza = new Pepporoni();
         }
 
+        System.out.println(type);
         return pizza;
 
     }
