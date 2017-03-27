@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author ranjeet
  */
-public class PanCakeHouseMenu {
+public class PanCakeHouseMenu implements Menu{
 
     private final List<MenuItem> menuItems;
 
@@ -30,8 +30,10 @@ public class PanCakeHouseMenu {
 //    public List<MenuItem> getMenuItems() {
 //        return menuItems;
 //    }
+    @Override
     public Iterator<MenuItem> createIterator() {
 
-        return new PanCakeHouseIterator(menuItems);
+//        return new PanCakeHouseIterator(menuItems);
+        return menuItems.iterator();
     }
 }

@@ -1,5 +1,7 @@
 package com.futurefry.designPattern.iterator;
 
+import java.util.Arrays;
+
 /**
  *
  * @author ranjeet
@@ -7,11 +9,15 @@ package com.futurefry.designPattern.iterator;
 public class APP {
 
     public static void main(String[] args) {
-        PanCakeHouseMenu panCakeHouseMenu = new PanCakeHouseMenu();
-        DinerMenu dinerMenu = new DinerMenu();
-        
-        Waitress waitress = new Waitress(panCakeHouseMenu, dinerMenu);
+        Menu panCakeHouseMenu = new PanCakeHouseMenu();
+        Menu dinerMenu = new DinerMenu();
+        Menu cafeMenu = new CafeMenu();
+
+        Waitress waitress = new Waitress(Arrays.asList(panCakeHouseMenu,dinerMenu,cafeMenu));
         waitress.printMenu();
+        
+//        ListIterator
+//Collection
     }
-    
+
 }

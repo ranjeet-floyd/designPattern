@@ -1,36 +1,30 @@
 package com.futurefry.designPattern.iterator;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  *
  * @author ranjeet
  */
 public class Waitress {
-
-    private final PanCakeHouseMenu panCakeHouseMenu;
-    private final DinerMenu dinerMenu;
-
-    public Waitress(PanCakeHouseMenu panCakeHouseMenu, DinerMenu dinerMenu) {
-        this.panCakeHouseMenu = panCakeHouseMenu;
-        this.dinerMenu = dinerMenu;
+    
+    private final List<Menu> menus;
+    
+    public Waitress(List<Menu> menus) {
+        this.menus = menus;
     }
-
+    
     public void printMenu() {
-        Iterator<MenuItem> panCakeHouseIterator = panCakeHouseMenu.createIterator();
-        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
-
-        System.out.println("Menu \n ..........BreakFast");
-        printMenu(panCakeHouseIterator);
-
-        System.out.println("\n Lunch");
-
-        printMenu(dinerIterator);
-
+        
+        System.out.println("Menu \n .");
+        menus.forEach(m -> printMenu(m.createIterator()));
+        
+        
     }
-
+    
     private void printMenu(Iterator<MenuItem> iterator) {
-
+        
         while (iterator.hasNext()) {
             MenuItem menuItem = iterator.next();
             System.out.print(menuItem.getName() + ", ");
@@ -38,5 +32,5 @@ public class Waitress {
             System.out.println(" " + menuItem.getPrice());
         }
     }
-
+    
 }
